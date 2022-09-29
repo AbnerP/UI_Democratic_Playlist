@@ -1,17 +1,28 @@
-import React from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 function LandingScreen() {
   const navigate = useNavigate();
+
   return (
     <div>
       <p>Landing Screen</p>
-      <button onClick={() =>
-            navigate("/queue")
-          }>Go to queue</button>
-    </div>
+      {/* Join with code */}
 
-  )
+      {/* Create Queue */}
+      <Button variant="contained" onClick={() => navigate("/queue")}>
+        Queue Page
+      </Button>
+    </div>
+  );
 }
 
-export default LandingScreen
+const styles = {
+  button: {
+    backgroundColor: "red",
+    border: "none",
+  },
+};
+
+export default LandingScreen;
