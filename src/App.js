@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import LandingScreen from './Screens/LandingScreen';
+import QueueScreen from './Screens/QueueScreen';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Prueba de pull
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> 
-      </header>
+        <BrowserRouter>
+          <Routes>
+            <Route path="*" element={ <Navigate to="/home"/>} />
+            <Route path="/home" element={<LandingScreen />} />
+            <Route path="/queue" element={<QueueScreen />} />
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
